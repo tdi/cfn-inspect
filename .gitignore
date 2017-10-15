@@ -1,0 +1,9 @@
+*.pyc
+__pycache__/
+*.egg-info/
+*.swp
+.DS_Store
+dist
+build
+Pipfile.lock
+templates/
