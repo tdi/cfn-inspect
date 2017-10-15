@@ -8,7 +8,7 @@ with open(os.path.join(here, "cfn_inspect", "__version__.py")) as f:
     exec(f.read(), about)
 
 __version__ = about['__version__']
-required = ['crayons', 'click', 'pyyaml']
+required = ['crayons', 'click', 'cfn_flip', 'boto3']
 
 setup(
     name='cfn-inspect',
