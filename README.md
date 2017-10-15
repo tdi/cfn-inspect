@@ -9,7 +9,7 @@ Support json templates only for now.
 
 ```$ pip install cfn-inspect```
 
-#Usage 
+# Usage 
 
 ```
 $ cfn-inspect rds.json --verbose
