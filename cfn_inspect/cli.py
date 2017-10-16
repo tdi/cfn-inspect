@@ -71,9 +71,11 @@ def cli(template, verbose=False, validate=False):
         t = json.loads(json_template)
     except Exception as e:
         raise Exception("Could not determine the input format: {}", e)
-    print("{}: {}".format(
-        crayons.white("Description", bold=True),
-        crayons.white("{}".format(t['Description']), bold=False)))
+
+    if 'Description' in t:
+        print("{}: {}".format(
+            crayons.white("Description", bold=True),
+            crayons.white("{}".format(t['Description']), bold=False)))
 
     if 'Parameters' in t:
         _pprint_parameters(t['Parameters'], verbose=verbose)
