@@ -28,7 +28,7 @@ def _pprint_outputs(t, verbose=False):
         if 'Export' in output:
             a = list(output['Export']['Name'].keys())[0]
             print("{}{}".format(
-                crayons.white("  {}\n    Exported as".format(p), bold=True),
+                crayons.white("  {}\n    Exported as ".format(p), bold=True),
                 crayons.red("{}".format(crayons.red(output['Export']['Name'])))))
         else:
             print(crayons.white("  {}".format(p), bold=True))
@@ -49,15 +49,17 @@ def _boto_validate(t):
 
 
 def _greeter():
-    return crayons.blue("cfn-inspect v{}".format(__version__), bold=True)
-
+    return crayons.blue("cfn-inspect v{}, Dariusz Dwornikowski".format(__version__), bold=True)
 
 @click.command()
 @click.argument("template", type=click.File('r'))
+@click.option("--version", is_flag=True, default=False, help="Show version and exit")
 @click.option("--verbose", "-v", is_flag=True, default=False, help="Be more verbose about the output")
 @click.option("--validate", is_flag=True, default=False, help="Validate template with AWS")
-def cli(template, verbose=False, validate=False):
+def cli(template, verbose=False, validate=False, version=False):
     click.echo(_greeter(), err=True)
+    if version:
+        sys.exit(0)
 
     print("{}: {}".format(
         crayons.white("Inspecting template", bold=True), crayons.blue(template.name)))
