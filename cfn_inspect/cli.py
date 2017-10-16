@@ -54,7 +54,7 @@ def _greeter():
 
 @click.command()
 @click.argument("template", type=click.File('r'))
-@click.option("--verbose/-v", is_flag=True, default=False, help="Be more verbose about the output")
+@click.option("--verbose", "-v", is_flag=True, default=False, help="Be more verbose about the output")
 @click.option("--validate", is_flag=True, default=False, help="Validate template with AWS")
 def cli(template, verbose=False, validate=False):
     click.echo(_greeter(), err=True)
