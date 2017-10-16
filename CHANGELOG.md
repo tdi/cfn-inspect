@@ -1,3 +1,5 @@
+0.2.6:
+  - boto3 validate template problems were fixed
 0.2.5:
   - added --version for convenience
   - fixes some small bugs

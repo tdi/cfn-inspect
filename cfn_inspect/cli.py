@@ -6,7 +6,6 @@ from cfn_flip import to_json
 from .__version__ import __version__
 import boto3
 import sys
-from botocore.exceptions import ValidationError, ClientError
 
 
 def _pprint_resources(t, verbose=False):
