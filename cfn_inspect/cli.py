@@ -7,6 +7,18 @@ from .__version__ import __version__
 import boto3
 import sys
 
+def _pprint_mappings(t, verbose=False):
+    print(crayons.blue("Mappings", bold=True))
+    print("  {}".format(p))
+
+def _pprint_conditions(t, verbose=False):
+    print(crayons.blue("Conditions", bold=True))
+    for p in t:
+        if verbose:
+            print("  {} ({})".format(p, t[p]))
+        else:
+            print("  {}".format(p))
+
 
 def _pprint_resources(t, verbose=False):
     print(crayons.blue("Resources", bold=True))
@@ -91,6 +103,10 @@ def cli(template, verbose=False, validate=False, version=False):
 
     if 'Parameters' in t:
         _pprint_parameters(t['Parameters'], verbose=verbose)
+    if 'Mappings' in t and verbose:
+        _pprint_mappings(t['Mappings'])
+    if 'Conditions' in t:
+        _pprint_conditions(t['Conditions'], verbose=verbose)
     if 'Resources' in t:
         _pprint_resources(t['Resources'], verbose=verbose)
     if 'Outputs' in t:

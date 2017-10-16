@@ -1,3 +1,6 @@
+0.2.7:
+  - added conditions printing
+  - added mappings only in verbose
 0.2.6:
   - boto3 validate template problems were fixed
 0.2.5:
