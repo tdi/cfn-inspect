@@ -3,7 +3,7 @@
 
 # cfn-inspect: pretty print and inspect CloudFormation templates
 
-Simple pretty printer for CloudFormation templates, in future it will also provide some validation and deep inspection in the future.
+Simple pretty printer for CloudFormation templates, it will also provide some validation and deep inspection in the future.
 
 Supports both json and yaml templates. You can validate templates with `--validate` switch.
 
